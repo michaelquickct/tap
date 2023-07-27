@@ -1,0 +1,10 @@
+---
+- name: Start Apache
+  hosts: web
+  gather_facts: yes
+  become: yes
+  tasks:
+    - name: Ensure httpd is running
+      service:
+        name: httpd
+        state: started
