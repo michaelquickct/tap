@@ -1,6 +1,6 @@
 ---
 - name: Configure Virtual Hosts
-  hosts: your_target_hosts
+  hosts: all
   become: yes
   tasks:
     - name: Create virtual host file for centos1.com
