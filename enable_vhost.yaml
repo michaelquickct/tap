@@ -1,0 +1,16 @@
+---
+- name: Enable Virtual Host
+  hosts: your_target_hosts
+  become: yes
+  tasks:
+    - name: Enable tapexample1.com virtual host
+      command: a2ensite tapexample1.conf
+      args:
+        chdir: /etc/apache2/sites-available
+      notify: Restart Apache Service
+
+    - name: Enable tapexample2.com virtual host
+      command: a2ensite tapexample2.conf
+      args:
+        chdir: /etc/apache2/sites-available
+      notify: Restart Apache Service
