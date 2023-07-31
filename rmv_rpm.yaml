@@ -2,6 +2,8 @@
 - name: Remove Package on RPM based distro
   hosts: all
   become: yes
+  gather_facts: no
+  
   vars:
     - name: package_name
 
