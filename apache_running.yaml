@@ -1,7 +1,7 @@
 ---
 - name: Start Apache
-  hosts: web
-  gather_facts: yes
+  hosts: all
+  gather_facts: no
   become: yes
   tasks:
     - name: Ensure httpd is running
