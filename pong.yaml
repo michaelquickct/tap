@@ -6,7 +6,3 @@
     - name: Ping the host
       ping:
       register: ping_result
-
-    - name: Display ping result
-      debug:
-        msg: "Ping to {{ inventory_hostname }} result: {{ ping_result.ping }}."
