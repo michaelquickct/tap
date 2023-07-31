@@ -1,0 +1,14 @@
+---
+- name: Remove Package on RPM based distro
+  hosts: all
+  become: yes
+  vars_prompt:
+    - name: package_name
+      prompt: "Enter the name of the package to remove:"
+      private: no 
+
+  tasks:
+    - name: Remove the package
+      package:
+        name: "{{ package_name }}"
+        state: absent
