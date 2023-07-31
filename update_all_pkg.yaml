@@ -1,0 +1,11 @@
+---
+- name: Update all packages on system
+  hosts: all 
+  gather_facts: no
+  become: yes
+  
+  tasks:
+    - name: update packages using yum
+      yum:
+        name: '*'
+        state: latest
