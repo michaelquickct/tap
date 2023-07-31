@@ -1,0 +1,24 @@
+---
+- name: Configure Virtual Hosts
+  hosts: your_target_hosts
+  become: yes
+  tasks:
+    - name: Create virtual host file for centos1.com
+      copy:
+        content: |
+          <VirtualHost *:80>
+              ServerName example1.com
+              DocumentRoot /var/www/tapexample1
+          </VirtualHost>
+        dest: /etc/apache2/sites-available/tapexample1.conf
+      notify: Enable Virtual Host
+
+    - name: Create virtual host file for centos2.com
+      copy:
+        content: |
+          <VirtualHost *:80>
+              ServerName example2.com
+              DocumentRoot /var/www/tapexample2
+          </VirtualHost>
+        dest: /etc/apache2/sites-available/tapexample2.conf
+      notify: Enable Virtual Host
