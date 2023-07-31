@@ -1,7 +1,7 @@
 ---
 - name: Check Disk Space
   hosts: all
-  gather_facts: yes
+  gather_facts: no
   tasks:
     - name: Check disk space
       command: df -h
