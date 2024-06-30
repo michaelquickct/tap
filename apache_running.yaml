@@ -1,5 +1,5 @@
 ---
-- name: Start Apache
+- name: Start Apache server 
   hosts: all
   gather_facts: no
   become: yes
